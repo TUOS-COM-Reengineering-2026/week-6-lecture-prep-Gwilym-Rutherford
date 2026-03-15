@@ -8,11 +8,15 @@ def is_palindrome(s):
     elif s[0] != s[-1]:
         return False  # base case 2
     else:
-        return is_palindrome(s[1:-1]) # recursive case
+        a = 0
+        b = len(s) - 1
+        while a < b:
+            if s[a] != s[b]:
+                return False
+            a += 1
+            b -= 1
 
-    # TODO: test_palindrome_long() will trigger RecursionError. Can you fix it by rewriting the above code?
-    # HINT: You can use a loop to replace the recursive call.
-    # TODO: How do you check if your fix is correct?
+        return True
 
 
 # PART 2
